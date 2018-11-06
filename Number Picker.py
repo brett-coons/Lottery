@@ -8,7 +8,6 @@ import re
 def main():
     print (generate(draw_5(), draw_1()))
     
-
 def draw_5():
     pick_five = [x for x in range(1,71)]
     ## pick five numbers
@@ -26,17 +25,13 @@ def draw_1():
     money_ball = random.choices(pick_one, k = 1)
     return (money_ball)
 
-
-
 def generate(numbers, money_ball):
     ticket = numbers + money_ball
     while (checkHistorical(ticket) == True):
         numbers = draw_5()
         ticket = numbers + money_ball
     return (ticket)
-
-
-    
+   
 ## this step is needed to ensure no draw contains duplicates in the first five numbers because random.choices
 ## does not always guarantee unique results
 def checkDuplicates(array):
