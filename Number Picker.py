@@ -32,6 +32,7 @@ def generate(numbers, money_ball):
     ticket = numbers + money_ball
     while (checkHistorical(ticket) == True):
         numbers = draw_5()
+        ticket = numbers + money_ball
     return (ticket)
 
 
@@ -54,7 +55,7 @@ def checkHistorical(array):
             ticket = [int(x) for x in split[1:7]]
             ## build dictionary formatted as {date: [ticket]}
             D[date] = ticket
-    if (ticket in D.values()):
+    if (array in D.values()):
         return (True)       ## match found
     else:
         return (False)      
