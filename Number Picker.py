@@ -54,7 +54,6 @@ def checkHistorical(array):
             ticket = [int(x) for x in split[1:7]]
             ## build dictionary formatted as {date: [ticket]}
             D[date] = ticket
-    print (D)
     if (ticket in D.values()):
         return (True)       ## match found
     else:
